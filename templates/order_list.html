@@ -1,0 +1,8 @@
+<a href="{% url 'blog:post_list' %}">Last view</a>
+{% for posts in order_post %}
+<h1>{{posts.title}}</h1>
+<p>{{posts.body}}</p>
+<p>Created by {{posts.author}}</p>
+{% endfor %}
+
+

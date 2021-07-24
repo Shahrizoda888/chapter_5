@@ -1,15 +1,17 @@
 from django.shortcuts import render
-from django.views.generic import ListView,DetailView # new
-
-from .models import Post
-# Create your views here.
-class BlogListView(ListView):
-    model = Post
-    template_name='home.html'
+from blog.models import Post
 
 
-class BlogDetailView(DetailView): # new 
-    model = Post 
-    template_name = 'post_detail.html'
+def post_list(request):
+    post=Post.objects.all()
+    return render(request, 'index.html', {'post': post})
+
+
+def order_post(request):
+    post=Post.objects.all().order_by('title')
+    return render (request, 'order_list.html',{'order_post': post})
+
+
+
 
 
