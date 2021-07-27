@@ -1,7 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
 <a href="{% url 'blog:order_post' %}">Order</a>
 {% for posts in post %}
 <h1>{{posts.title}}</h1>
 <p>{{posts.body}}</p>
 <p>Created by Shahrizoda</p>
 {% endfor %}
+
+{% endblock content %}
 
